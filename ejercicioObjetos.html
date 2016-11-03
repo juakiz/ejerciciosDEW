@@ -1,0 +1,50 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <meta charset="UTF-8">
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+        //var nacimiento = 0;
+
+        function persona (nombrein,edadin){
+            this.nombre = nombrein;
+            this.edad = edadin;
+            this.anyoDeNacimiento = nacimiento;
+        }
+
+        function nacimiento (){
+            var anyo = 2016 - this.edad;
+            return anyo;
+        }
+
+
+
+        var juan = new persona("Juan",25);
+        var maria = new persona("Maria",32);
+        maria.pelo = "rubio";
+
+        alert("Hay dos personas:\n"+juan.nombre+" nació: "+juan.anyoDeNacimiento()+"\n"+maria.nombre+" nació: "+maria.anyoDeNacimiento()+"\nAdemas Maria tiene el pelo "+maria.pelo+".");
+/*
+        var arrayPersonas = new Array();
+        var i = 0;
+
+        if(confirm("¿Quieres crear personas?")){
+            do{
+
+                var newName = prompt(Dime el nombre);
+                var newAge = prompt(Dime la edad);
+
+                var personas = new persona(newName , newAge);
+
+                arrayPersonas[i] = personas;
+
+            }while(confirm("¿Quieres seguir editando personas?"));
+        }else{
+            alert("Pos ya está");
+        }
+*/
+		</script>
+    </BODY>
+</HTML>

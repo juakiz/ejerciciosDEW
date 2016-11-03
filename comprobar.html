@@ -1,0 +1,36 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <script type="text/javascript"></script>
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+			var i;
+			var valores =["Z","5","a","azzz","aa","2"];
+			var mayor = valores[0];
+			var indiceMayor = 0;
+
+			//if(mayor>valores[1])
+			//	alert("Comprueba el valor");
+			//else
+			//	alert("Algo falla");
+
+			//alert("el mayor es "+mayor);
+			//alert("el primer valor es "+valores[0])
+			for(i in valores){
+
+					if(valores[i]>mayor){
+						mayor = valores[i];
+						indiceMayor = i;
+					}
+
+			}
+			//alert("El ultimo valor comprobado es "+valores[i])
+			//alert("el mayor es"+mayor);
+
+			alert("El mayor valor del array es "+mayor+" y esta en el indice "+indiceMayor+".");
+
+		</script>
+    </BODY>
+</HTML>

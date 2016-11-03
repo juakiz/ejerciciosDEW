@@ -1,0 +1,29 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+        <meta charset="UTF-8">
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+        var cantidad = prompt ("Introduce la cantidad en euros:");
+
+        var divisa = confirm ("¿Estás en Canarias?");
+
+        function impuesto (cantidad,divisa){
+
+            var IGIC = 1.07;
+            var IVA = 1.21;
+
+            if(divisa==1)
+                return "El precio con I.G.I.C. es "+cantidad * IGIC+"€.";
+            else
+                return "El precio con I.V.A. es "+cantidad * IVA+"€.";
+
+        }
+
+        alert(impuesto(cantidad,divisa));
+
+		</script>
+    </BODY>
+</HTML>

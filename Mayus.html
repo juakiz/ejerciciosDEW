@@ -1,0 +1,36 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <script type="text/javascript" src="codigo.js"></script>
+    <meta charset="UTF-8">
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+        var letrasMay = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X','Y','Z'];
+        var letrasMin = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x','y','z'];
+
+        var frase = prompt("Introduce una frase:");
+
+        var hayMay=0;
+        var hayMin=0;
+
+        for(var i=0 ; i<frase.length ; i++){
+            for(var j=0 ; j<letrasMay.length ; j++){
+                if(frase.charAt(i)==letrasMay[j])
+                    hayMay = 1;
+                if(frase.charAt(i)==letrasMin[j])
+                    hayMin = 1;
+            }
+        }
+
+        if(!hayMay)
+            alert("Son todo minúsculas");
+        else if(!hayMin)
+            alert("Son todo mayúsculas");
+        else
+            alert("Hay mayúsculas y minúsculas");
+
+		</script>
+    </BODY>
+</HTML>

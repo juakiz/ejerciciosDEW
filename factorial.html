@@ -1,0 +1,30 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <script type="text/javascript" src="codigo.js"></script>
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+		var factorial = prompt("Introduce un numero y te doy el factorial");
+		var resultado = 1;
+
+		if(factorial != 0 || factorial != 1){
+
+			var temp = factorial;
+
+			for(var i = (factorial-1); i>1 ; i--){
+
+				temp=temp*i;
+
+			}
+
+		}
+
+		resultado = temp;
+
+		alert(factorial+"! = "+resultado);
+
+		</script>
+    </BODY>
+</HTML>

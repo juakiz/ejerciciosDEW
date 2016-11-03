@@ -1,0 +1,31 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <script type="text/javascript"></script>
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+        var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+        var NIF = prompt("Dime tu NIF:");
+
+        var DNI = NIF.substring( 0, 8);
+        var letra = NIF.substring(8).toUpperCase();
+
+        //var letra = prompt("Dime tu letra:").toUpperCase();
+
+        console.log(DNI);
+        console.log(letra);
+
+        var resto = DNI % 23;
+
+        if(letra == letras[resto]){
+            alert("Match!!");
+        }else{
+            alert("Esa no es tu letra");
+        }
+
+		</script>
+    </BODY>
+</HTML>

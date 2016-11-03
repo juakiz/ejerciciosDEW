@@ -1,0 +1,35 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <script type="text/javascript" src="codigo.js"></script>
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+        var numero = parseInt(prompt("Introduce un numero:"));
+
+        function Nsum(num){
+
+            var sumPares = 0;
+            var sumImpares = 0;
+
+            while (num>0){
+
+                if((num%2) === 0)
+                    sumPares += num;
+                else
+                    sumImpares += num;
+                                
+                num--;
+
+            }
+
+            alert("La suma de sus pares es:" + sumPares);
+            alert("La suma de sus impares es:" + sumImpares);
+        }
+
+        Nsum(numero);
+
+		</script>
+    </BODY>
+</HTML>

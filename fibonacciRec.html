@@ -1,0 +1,36 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <script type="text/javascript" src="codigo.js"></script>
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+        // 0, 1,   sumar los dos anteriores para saber el siguiente
+
+        var numero = parseInt(prompt("¿Cuantos numeros quieres?"));
+        
+
+        function fibonacci (x, y, rep){
+
+            var z;
+            z=x+y;
+            y=x;
+            x=z;
+
+            //alert(z);
+
+            rep--;
+
+            if (rep <= 0){
+                return;
+
+            fibonacci (x,y,rep);
+        
+        }
+
+        fibonacci(1,1,numero);
+
+		</script>
+    </BODY>
+</HTML>

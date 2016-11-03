@@ -1,0 +1,34 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+        <meta charset="UTF-8">
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+        var numero = prompt ("Introduce un número y te mostrare los primos menores a él:");
+
+        function primo (num){
+
+            var esPrimo;
+
+            for(var i=2 ; i<num ; i++){
+
+                esPrimo = 1;
+
+                for(var j=2 ; j<i ; j++){
+                    if(i%j==0)
+                        esPrimo = 0;
+                }
+
+                if(esPrimo){
+                    alert(i);
+                }
+            }
+        }
+
+        primo(numero);
+
+		</script>
+    </BODY>
+</HTML>

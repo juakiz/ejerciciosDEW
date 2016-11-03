@@ -1,0 +1,67 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <meta charset="UTF-8">
+    </HEAD>
+    <BODY>
+    	<table border=1>
+    	  <tr>
+		    <th>Marca</th>
+		    <th>Modelo</th> 
+		    <th>Año</th>
+		    <th>Oficina</th>
+		    <th>Cidad</th> 
+		    <th>Responsable</th>
+		  </tr>
+		  <tbody id="tabla"></tbody>
+        </table>
+		<script type="text/javascript">
+
+        var domingoAlonso = new concesionario("Miller Bajo","Las Palmas","Robertito");
+        var kia = new concesionario("La Garita","Telde","Federico");
+        var volvo = new concesionario("Bellavista","Maspalomas","Doroteo");
+        var chrisller = new concesionario("La Pardilla","Tafira","Felipito");
+        var opel = new coche("Opel", "Astra", 1990, domingoAlonso);
+        var renault = new coche("Renault", "Clio" ,1995, kia);
+        var peugeot = new coche("Peugeot", "308", 2000, volvo);
+        var ferrari = new coche("Ferrari", "F-40", 1990, chrisller);
+
+        var arrayCoches = [opel, renault, peugeot, ferrari];
+
+        function coche ( marca, modelo, anyo, concesionario){
+            this.marca = marca;
+            this.modelo = modelo;
+            this.anyo = anyo;
+            this.concesionario = concesionario;
+            this.imprimeDatos = imprime_datos;
+        }
+
+        function concesionario (oficina, ciudad, responsable) {
+            this.oficina = oficina;
+            this.ciudad = ciudad;
+            this.responsable = responsable;
+        }
+
+        function imprime_datos (){
+            var datos = "<tr>"+
+                            "<td>"+this.marca+"</td>"+
+                            "<td>"+this.modelo+"</td>"+
+                            "<td>"+this.anyo+"</td>"+
+                            "<td>"+this.concesionario.oficina+"</td>"+
+                            "<td>"+this.concesionario.ciudad+"</td>"+
+                            "<td>"+this.concesionario.responsable+"</td>"+
+                        "</tr>";
+            return datos;
+        }
+
+        var churro = "";
+
+        for(var i = 0 ; i<arrayCoches.length ; i++){
+        	churro += arrayCoches[i].imprimeDatos();
+        }
+
+        document.getElementById("tabla").innerHTML = churro;
+
+		</script>
+    </BODY>
+</HTML>

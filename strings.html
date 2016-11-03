@@ -1,0 +1,71 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <script type="text/javascript" src="codigo.js"></script>
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+			var cadena1 = "La lluvia en Sevilla ";
+			var cadena2 = "es una maravilla";
+			var caracter = ".";
+			var resultado = cadena1+cadena2+caracter;
+			var match,match1;
+			var opcion;
+			var quedarse = true;
+
+			do{
+			opcion = prompt("Dadas los chorizos \"La lluvia en Sevilla\", \"es una maravilla\" y \".\",\n"+
+							"a) Muestralo todo concatenado.\n"+
+							"b) Dame la longitud de la cadena final.\n"+
+							"c) Buscar la posicion de un caracter o una cadena dento de la cadena.\n"+
+							"d) Pedir el inicio y el final, para sacar una subcadena.\n"+
+							"e) Hacer un array con sus palabras.\n"+
+							"Escribe \"salir\" para terminar.");
+
+			switch(opcion)
+	    	{
+	    		case "a":
+	    			alert(resultado);
+	    		break;
+
+	    		case "b":
+	    			alert(resultado.length);
+	    		break;
+
+	    		case "c":
+		    		match = prompt("Dame un caracter o cadena y te digo la posicion:");
+		    		var posicion = resultado.indexOf(match);
+		    		if(match != -1)
+		    			alert(posicion);
+		    		else
+		    			alert("No encuentro el patron de busqueda.");
+	    		break;
+
+				case "d":
+					match = prompt("Dime la posicion de inicio:");
+					match2 = prompt("Dime la posicion final:");
+					var substr = resultado.substring(match, match2);
+					alert(substr);
+	    		break;
+
+				case "e":
+					match = prompt("Dime por que caracter dividir:");
+					alert(resultado.split(match));
+	    		break;
+
+	    		case "salir":
+	    			quedarse = false;
+	    		break;
+	    		
+	    		default:
+	    			alert("Seleccion fuera de rango");
+	    	}
+
+			}while(quedarse)
+
+			alert("Gracias por utilizar nuestro software :)");
+
+		</script>
+    </BODY>
+</HTML>

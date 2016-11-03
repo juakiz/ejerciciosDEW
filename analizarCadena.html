@@ -1,0 +1,40 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <script type="text/javascript" src="codigo.js"></script>
+    <meta charset="UTF-8">
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+        var introduccion = prompt("Introduce una frase:");
+
+        var frase = introduccion.split(" ");
+
+        var numPalabras = frase.length;
+
+        alert("EL numero de palabras es: "+numPalabras);
+
+        var ultimaPalabra = frase[frase.length-1];
+
+        alert("La ultima palabra es: "+ultimaPalabra);
+
+        var primerPalabra = frase[0];
+
+        alert("La priera palabra es: "+primerPalabra);
+
+        var alReves = "";
+
+        for(var i=0 ; i<frase.length ; i++){
+            alReves = frase[i] + " " + alReves;
+        }
+
+        alert("El array al revés: "+alReves);
+
+        alert("Las palabras de la 'a' a la 'z': "+frase.sort());
+
+        alert("Las palabras de la 'z' a la 'a': "+frase.sort().reverse());
+
+		</script>
+    </BODY>
+</HTML>

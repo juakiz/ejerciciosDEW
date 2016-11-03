@@ -1,0 +1,48 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <script type="text/javascript" src="codigo.js"></script>
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+		var cadena = "Dabale arroz a la zorra el Abad";
+		var cadena2 = "Se van sus naves";
+		var cadena3 = "Me pica el ciruelo";
+
+
+		function palindromo (str){
+
+			alert("La cadena a transgiversar es:\n"+str);
+
+			var resultado = str.charAt(0).toLowerCase();
+			var comparar = str.charAt(0).toLowerCase();
+			//alert(resultado);
+
+			for( var i = 1 ; i < str.length ; i++ ){
+
+				if(str.charAt(i)!=" "){			
+					resultado = str.charAt(i).toLowerCase() + resultado;
+					//alert(resultado);
+					comparar = comparar + str.charAt(i).toLowerCase();
+				}
+
+			}
+
+			alert("La cadena al reves es:\n" + resultado);
+
+			if(comparar==resultado){
+				alert("Ademas es un palindromo:\n(\""+comparar+"\" es igual a \""+resultado+"\")");
+			}else{
+				alert("No es un palindromo:\n(\""+comparar+"\" es distinto a \""+resultado+"\")");
+			}
+
+		}
+
+		palindromo(cadena);
+		palindromo(cadena2);
+		palindromo(cadena3);
+
+		</script>
+    </BODY>
+</HTML>

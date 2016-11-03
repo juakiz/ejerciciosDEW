@@ -1,0 +1,39 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <script type="text/javascript" src="codigo.js"></script>
+    <meta charset="UTF-8">
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+        var introduccion = prompt("Introduce una frase:");
+
+        //separa la string introducida en un array de palabras
+        var frase = introduccion.split(" ");
+
+        //añade palabra al principio del array
+        frase.unshift("hola");
+
+        //añade palabra al final del array
+        frase.push("adios");
+
+        var dias = ("lunes","martes","miercoles","jueves","viernes","sabado","domingo");
+
+        //concatena el array frase con dias
+        var frase = frase.concat(dias);
+
+        //da la vuelta al array
+        frase.reverse();
+
+        //elimina el primer valor del array
+        frase.shift();
+
+        //convierte el array en una string separada por comas
+        frase.join(,);
+
+        alert(frase);
+
+		</script>
+    </BODY>
+</HTML>
