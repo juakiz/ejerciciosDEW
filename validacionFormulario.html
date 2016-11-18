@@ -1,0 +1,114 @@
+<html>
+ <head>
+    <meta charset="utf-8">
+    <style>
+    td{
+    	padding: 5px;
+    }
+    </style>
+ </head>
+<body>
+
+<!-- Formulario -->
+
+<h2>Formulario</h2>
+<form action="URL" method="post" name="form1" onSubmit="return validar()">
+  	<table>
+			<tr>
+			<td>
+			    <label for="nombre">Nombre y Apellidos:</label>
+			</td>
+			<td>
+			    <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre y apellidos">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+			    <label for="NIF">NIF/NIE:</label>
+			</td>
+			<td>
+			    <input type="text" class="form-control" id="NIF" name="NIF" placeholder="Introduce tu NIF ó NIE">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+			    <label for="email">Email:</label>
+			</td>
+			<td>
+			    <input type="text" class="form-control" id="email" name="email" placeholder="Introduce tu correo electrónico">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+			    <label for="passwd" >Contraseña:</label>
+			</td>
+			<td>
+			    <input type="password" id="passwd" name="passwd" placeholder="Introduce tu contraseña">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+			    <label for="passwd1" >Repite la contraseña:</label>
+			</td>
+			<td>
+			    <input type="password" id="passwd1" name="passwd1" placeholder="Repite tu contraseña">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+			    <label for="titulacion">Titulación:</label>
+			</td>
+			<td>
+			    <select id="titulacion" name="titulacion">
+			    	<option>ESO</option>
+			    	<option>Bachillerato</option>
+			    	<option>Ciclo Formativo</option>
+			    	<option>Universidad</option>
+			    </select>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+			    <label for="curso">Curso:</label>
+			</td>
+			<td>
+			    <select id="curso" name="curso">
+			    	<option>1º</option>
+			    	<option>2º</option>
+			    	<option>3º</option>
+			    	<option>4º</option>
+			    </select>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+			    <label for="Anyo">Año académico:</label>
+			</td>
+			<td>
+			    <input type="text" id="Anyo" name="Anyo" placeholder="Introduce el año académico">
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+			    <button type="submit">Enviar</button>
+			</td>
+		</tr>
+    </table>
+  </form>
+</div>
+
+<!-- Javascript -->
+<script>
+
+
+</script>
+</body>
+</html>

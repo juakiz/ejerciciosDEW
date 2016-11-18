@@ -1,0 +1,42 @@
+<HTML>
+    <HEAD>
+        <TITLE>Validacion regex</TITLE>
+        <meta charset="utf-8">
+    </HEAD>
+    <BODY>
+
+    <!-- El onSubmit controla que se envie el formulario o no-->
+    <form name="formu" action="" onSubmit="return ValidaCampos(this)">
+    	 <label class="control-label col-sm-2" for="email">Nombre:</label>
+	    <input type="text" class="form-control" id="email" placeholder="Introduce tu email">
+
+    	<label class="control-label col-sm-2" for="matricula">Matrícula:</label>
+	    <input type="text" class="form-control" id="matricula" placeholder="Introduce tu matrícula">
+
+	    <button type="submit" >Enviar</button>
+
+	<script type="text/javascript">
+	function ValidaCampos(formu) {
+
+/*Defina una expresión regular que permita validar el número de matrícula del alumno, el cual presenta las siguientes peculiaridades. El número de matrícula está compuesto por 5 dígitos y una letra. El grupo de 5 dígitos comienza siempre por un número impar y la letra puede er tanto P como S, para diferenciar el nivel de estudios. Ej.: 14456S, 33334P...*/
+
+		var er_email = /^(.+\@.+\..+)$/;
+		var er_matricula = /^[13579]/d{4}[SP]$/;//revisar
+
+		if(!er_email.test(formu.email.value)) {
+			alert('Campo E-MAIL no válido.');
+			return false; //no submit
+		} else {
+			alert('Campo E-MAIL válido.');
+		}
+
+		if(!er_matricula.test(formu.matricula.value)) {
+			alert('Campo Matrícula no válido.');
+			return false; //no submit
+		} else {
+			alert('Campo Matrícula válido.');
+		}
+
+		return true; //pasa al submit
+	}
+	</script>
