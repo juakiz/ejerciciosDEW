@@ -12,7 +12,7 @@
 <!-- Formulario -->
 
 <h2>Formulario</h2>
-<form action="URL" method="post" name="form1" onSubmit="return validar()">
+<form action="URL" method="post" name="formu" onSubmit="return validar(this)">
   	<table>
 			<tr>
 			<td>
@@ -28,7 +28,7 @@
 			    <label for="NIF">NIF/NIE:</label>
 			</td>
 			<td>
-			    <input type="text" class="form-control" id="NIF" name="NIF" placeholder="Introduce tu NIF ó NIE">
+			    <input type="text" id="NIF" name="NIF" placeholder="Introduce tu NIF">
 			</td>
 		</tr>
 
@@ -37,7 +37,7 @@
 			    <label for="email">Email:</label>
 			</td>
 			<td>
-			    <input type="text" class="form-control" id="email" name="email" placeholder="Introduce tu correo electrónico">
+			    <input type="text" id="email" name="email" placeholder="Introduce tu correo electrónico">
 			</td>
 		</tr>
 
@@ -46,7 +46,7 @@
 			    <label for="passwd" >Contraseña:</label>
 			</td>
 			<td>
-			    <input type="password" id="passwd" name="passwd" placeholder="Introduce tu contraseña">
+			    <input type="password" id="passwd" name="passwd" placeholder="Introduce tu contraseña" required>
 			</td>
 		</tr>
 
@@ -55,7 +55,7 @@
 			    <label for="passwd1" >Repite la contraseña:</label>
 			</td>
 			<td>
-			    <input type="password" id="passwd1" name="passwd1" placeholder="Repite tu contraseña">
+			    <input type="password" id="passwd1" name="passwd1" placeholder="Repite tu contraseña" required>
 			</td>
 		</tr>
 
@@ -64,7 +64,7 @@
 			    <label for="titulacion">Titulación:</label>
 			</td>
 			<td>
-			    <select id="titulacion" name="titulacion">
+			    <select id="titulacion" name="titulacion" required>
 			    	<option>ESO</option>
 			    	<option>Bachillerato</option>
 			    	<option>Ciclo Formativo</option>
@@ -78,7 +78,7 @@
 			    <label for="curso">Curso:</label>
 			</td>
 			<td>
-			    <select id="curso" name="curso">
+			    <select id="curso" name="curso" required>
 			    	<option>1º</option>
 			    	<option>2º</option>
 			    	<option>3º</option>
@@ -89,10 +89,40 @@
 
 		<tr>
 			<td>
-			    <label for="Anyo">Año académico:</label>
+			    <label for="anyo">Año académico:</label>
 			</td>
 			<td>
-			    <input type="text" id="Anyo" name="Anyo" placeholder="Introduce el año académico">
+			    <input type="text" id="anyo" name="anyo" placeholder="Introduce el año académico">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+			    <label for="deportes">Deportes que te gustan (Seleccionar sólo uno):</label>
+			</td>
+			<td>
+			    <input type="radio" name="deportes" value="futbol" required> Fútbol<br>
+			    <input type="radio" name="deportes" value="baloncesto" required> Baloncesto<br>
+			    <input type="radio" name="deportes" value="balonmano" required> Balonmano<br>
+			    <input type="radio" name="deportes" value="tenis" required> Tenis<br>
+			    <input type="radio" name="deportes" value="petanca" required> Petanca<br>
+			    <input type="radio" name="deportes" value="elteto" required> El teto extreme<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+			    <label for="comidas">Comidas que te gustan (Mínimo una):</label>
+			</td>
+			<td>
+			    <input type="checkbox" name="comidas" value="paella"> Paella<br>
+			    <input type="checkbox" name="comidas" value="pizza"> Pizza<br>
+			    <input type="checkbox" name="comidas" value="hamburguesa"> Hamburguesa<br>
+			    <input type="checkbox" name="comidas" value="hotdog"> Hot-Dog<br>
+			    <input type="checkbox" name="comidas" value="kebab"> Kebab<br>
+			    <input type="checkbox" name="comidas" value="potaje"> Potaje<br>
+			    <input type="checkbox" name="comidas" value="papafrita"> Papas Fritas<br>
+			    <input type="checkbox" name="comidas" value="solomillo"> Solomillo<br>
 			</td>
 		</tr>
 
@@ -106,8 +136,106 @@
 </div>
 
 <!-- Javascript -->
-<script>
+<script type="text/javascript">
 
+function validar(formu) {
+
+
+	// Que no esté vacio el nombre
+	var valor=document.getElementById("nombre").value;
+	if (valor==null || valor.length==0){
+	  alert("El campo nombre no puede estar vacío."); 
+	  return false;
+	}
+
+	// Que el NIF tengo un formato correcto
+
+	var er_NIF=/^((\d{8})([-]?)([A-Za-z]{1}))$/;
+
+	if(!er_NIF.test(formu.NIF.value)) {
+		alert('Formato NIF no válido.');
+		return false; //no submit
+	} else {
+		alert('Formato NIF válido.');
+	}
+
+
+	// Que de la letra del NIF sea válida
+
+   	var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+    var NIF = document.getElementById("NIF").value;
+
+    var DNI = NIF.substring( 0, 8);
+    var letra = NIF.substring(8).toUpperCase();
+
+    console.log(DNI);
+    console.log(letra);
+
+    var resto = DNI % 23;
+
+    if(letra != letras[resto]){
+        alert('Letra del NIF incorrecta.');
+		return false; //no submit
+    }else{
+        alert("Letra NIF correcta.");
+    }
+
+    // Que el email tenga formato válido y sea cuenta gmail
+
+    var er_email = /^(.+\@gmail\.com)$/;
+
+	if(!er_email.test(formu.email.value)) {
+		alert('Formato email no válido.');
+		return false; //no submit
+	} else {
+		alert('Formato email válido.');
+	}
+
+	// Que la contraseña tenga 8+ caracteres y algún dígito
+
+    var er_pass = /^((.*\d+.*){8})/;
+    var pass;
+
+    if(!er_pass.test(formu.passwd.value)) {
+		alert('La contraseña ha de tener al menos 8 caracteres y al menos un digito.');
+		return false; //no submit
+	} else {
+		alert('Formato contraseña válida.');
+		pass=document.getElementById("passwd").value; // Para validar que se repita más abajo
+	}
+
+	// Que repita contraseña correctamente
+
+	pass1=document.getElementById("passwd1").value;
+
+	alert("La primera pass es:"+pass+" -- La segunda pass es:"+pass1);
+
+	if(pass!=pass1) {
+		alert('Las contraseñas no coinciden.');
+		return false; //no submit
+	} else {
+		alert('Las contraseñas coinciden.');
+	}
+
+	// Que el año académico se haya introducido correctamente
+	// TODO: que haya un intervalo de 1 entre los años
+
+	var er_anyo=/^(\d{4}[\-\/]\d{4})$/;
+
+	if(!er_anyo.test(formu.anyo.value)) {
+		alert('Formato del Año Académico no válido.');
+		return false; //no submit
+	} else {
+		alert('Formato del Año Académico válido.');
+	}
+
+	// Que no esté vacio el nombre
+
+	alert(document.formu.comidas[0].checked);
+
+	return true;
+}
 
 </script>
 </body>
