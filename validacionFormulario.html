@@ -1,139 +1,136 @@
 <html>
  <head>
     <meta charset="utf-8">
-    <style>
-    td{
-    	padding: 5px;
-    }
-    </style>
+
+	  <title>Validar Formulario</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <style>
+	  body{
+	  	background-color:lightgray;
+	  }
+	  </style>
  </head>
 <body>
+
+<div class="container">
 
 <!-- Formulario -->
 
 <h2>Formulario</h2>
-<form action="URL" method="post" name="formu" onSubmit="return validar(this)">
-  	<table>
-			<tr>
-			<td>
-			    <label for="nombre">Nombre y Apellidos:</label>
-			</td>
-			<td>
-			    <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre y apellidos">
-			</td>
-		</tr>
+	<form action="agerys" method="post" name="formu" onSubmit="return validar(this)" class="form-horizontal">
 
-		<tr>
-			<td>
-			    <label for="NIF">NIF/NIE:</label>
-			</td>
-			<td>
-			    <input type="text" id="NIF" name="NIF" placeholder="Introduce tu NIF">
-			</td>
-		</tr>
+			<div class="form-group">
+			    <label class="control-label col-sm-2" for="nombre">Nombre y Apellidos:</label>
 
-		<tr>
-			<td>
-			    <label for="email">Email:</label>
-			</td>
-			<td>
-			    <input type="text" id="email" name="email" placeholder="Introduce tu correo electrónico">
-			</td>
-		</tr>
+			    <div class="col-sm-10">
+			    	<input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre y apellidos">
+			    </div>
+			</div>
 
-		<tr>
-			<td>
-			    <label for="passwd" >Contraseña:</label>
-			</td>
-			<td>
-			    <input type="password" id="passwd" name="passwd" placeholder="Introduce tu contraseña" required>
-			</td>
-		</tr>
+			<div class="form-group">
+			    <label class="control-label col-sm-2" for="NIF">NIF/NIE:</label>
 
-		<tr>
-			<td>
-			    <label for="passwd1" >Repite la contraseña:</label>
-			</td>
-			<td>
-			    <input type="password" id="passwd1" name="passwd1" placeholder="Repite tu contraseña" required>
-			</td>
-		</tr>
+			    <div class="col-sm-10">
+			    	<input type="text" id="NIF" name="NIF" placeholder="Introduce tu NIF" required>
+			    </div>
+			</div>
 
-		<tr>
-			<td>
-			    <label for="titulacion">Titulación:</label>
-			</td>
-			<td>
-			    <select id="titulacion" name="titulacion" required>
-			    	<option>ESO</option>
-			    	<option>Bachillerato</option>
-			    	<option>Ciclo Formativo</option>
-			    	<option>Universidad</option>
-			    </select>
-			</td>
-		</tr>
+			<div class="form-group">
+			    <label class="control-label col-sm-2" for="email">Email:</label>
 
-		<tr>
-			<td>
-			    <label for="curso">Curso:</label>
-			</td>
-			<td>
-			    <select id="curso" name="curso" required>
-			    	<option>1º</option>
-			    	<option>2º</option>
-			    	<option>3º</option>
-			    	<option>4º</option>
-			    </select>
-			</td>
-		</tr>
+			    <div class="col-sm-10">
+			    	<input type="text" id="email" name="email" placeholder="Introduce tu correo electrónico" required>
+			    </div>
+			</div>
 
-		<tr>
-			<td>
-			    <label for="anyo">Año académico:</label>
-			</td>
-			<td>
-			    <input type="text" id="anyo" name="anyo" placeholder="Introduce el año académico">
-			</td>
-		</tr>
+			<div class="form-group">
+			    <label class="control-label col-sm-2" for="passwd" >Contraseña:</label>
 
-		<tr>
-			<td>
-			    <label for="deportes">Deportes que te gustan (Seleccionar sólo uno):</label>
-			</td>
-			<td>
-			    <input type="radio" name="deportes" value="futbol" required> Fútbol<br>
-			    <input type="radio" name="deportes" value="baloncesto" required> Baloncesto<br>
-			    <input type="radio" name="deportes" value="balonmano" required> Balonmano<br>
-			    <input type="radio" name="deportes" value="tenis" required> Tenis<br>
-			    <input type="radio" name="deportes" value="petanca" required> Petanca<br>
-			    <input type="radio" name="deportes" value="elteto" required> El teto extreme<br>
-			</td>
-		</tr>
+			    <div class="col-sm-10">
+			    	<input type="password" id="passwd" name="passwd" placeholder="Introduce tu contraseña" required>
+			    </div>
+			</div>
 
-		<tr>
-			<td>
-			    <label for="comidas">Comidas que te gustan (Mínimo una):</label>
-			</td>
-			<td>
-			    <input type="checkbox" name="comidas" value="paella"> Paella<br>
-			    <input type="checkbox" name="comidas" value="pizza"> Pizza<br>
-			    <input type="checkbox" name="comidas" value="hamburguesa"> Hamburguesa<br>
-			    <input type="checkbox" name="comidas" value="hotdog"> Hot-Dog<br>
-			    <input type="checkbox" name="comidas" value="kebab"> Kebab<br>
-			    <input type="checkbox" name="comidas" value="potaje"> Potaje<br>
-			    <input type="checkbox" name="comidas" value="papafrita"> Papas Fritas<br>
-			    <input type="checkbox" name="comidas" value="solomillo"> Solomillo<br>
-			</td>
-		</tr>
+			<div class="form-group">
+			    <label class="control-label col-sm-2" for="passwd1" >Repite la contraseña:</label>
 
-		<tr>
-			<td colspan="2">
-			    <button type="submit">Enviar</button>
-			</td>
-		</tr>
-    </table>
+			    <div class="col-sm-10">
+			    	<input type="password" id="passwd1" name="passwd1" placeholder="Repite tu contraseña" required>
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label class="control-label col-sm-2" for="titulacion">Titulación:</label>
+
+			    <div class="col-sm-10">
+				    <select id="titulacion" name="titulacion" required>
+				    	<option>ESO</option>
+				    	<option>Bachillerato</option>
+				    	<option>Ciclo Formativo</option>
+				    	<option>Universidad</option>
+				    </select>
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label class="control-label col-sm-2" for="curso">Curso:</label>
+
+			    <div class="col-sm-10">
+				    <select id="curso" name="curso" required>
+				    	<option>1º</option>
+				    	<option>2º</option>
+				    	<option>3º</option>
+				    	<option>4º</option>
+				    </select>
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label class="control-label col-sm-2" for="anyo">Año académico:</label>
+
+			    <div class="col-sm-10">
+			    	<input type="text" id="anyo" name="anyo" placeholder="Introduce el año académico" required>
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label class="control-label col-sm-2" for="deportes">Deportes que te gustan (Seleccionar sólo uno):</label>
+
+			    <div class="col-sm-10">
+				    <input type="radio" name="deportes" value="futbol" required> Fútbol<br>
+				    <input type="radio" name="deportes" value="baloncesto" required> Baloncesto<br>
+				    <input type="radio" name="deportes" value="balonmano" required> Balonmano<br>
+				    <input type="radio" name="deportes" value="tenis" required> Tenis<br>
+				    <input type="radio" name="deportes" value="petanca" required> Petanca<br>
+				    <input type="radio" name="deportes" value="elteto" required> El teto extreme<br>
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label class="control-label col-sm-2" for="comidas">Comidas que te gustan (Mínimo una):</label>
+
+			    <div class="col-sm-10">
+				    <input type="checkbox" name="comidas" value="paella"> Paella<br>
+				    <input type="checkbox" name="comidas" value="pizza"> Pizza<br>
+				    <input type="checkbox" name="comidas" value="hamburguesa"> Hamburguesa<br>
+				    <input type="checkbox" name="comidas" value="hotdog"> Hot-Dog<br>
+				    <input type="checkbox" name="comidas" value="kebab"> Kebab<br>
+				    <input type="checkbox" name="comidas" value="potaje"> Potaje<br>
+				    <input type="checkbox" name="comidas" value="papafrita"> Papas Fritas<br>
+				    <input type="checkbox" name="comidas" value="solomillo"> Solomillo<br>
+			    </div>
+			</div>
+
+		  <div class="form-group"> 
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-default">Crear Alumnado</button>
+		    </div>
+		  </div>
+
+
   </form>
+
 </div>
+
 
 <!-- Javascript -->
 <script type="text/javascript">
@@ -145,6 +142,7 @@ function validar(formu) {
 	var valor=document.getElementById("nombre").value;
 	if (valor==null || valor.length==0){
 	  alert("El campo nombre no puede estar vacío."); 
+	  valor.focus();
 	  return false;
 	}
 
@@ -154,10 +152,10 @@ function validar(formu) {
 
 	if(!er_NIF.test(formu.NIF.value)) {
 		alert('Formato NIF no válido.');
+		formu.NIF.focus();
 		return false; //no submit
-	} else {
-		alert('Formato NIF válido.');
-	}
+	} //else alert('Formato NIF válido.');
+
 
 
 	// Que de la letra del NIF sea válida
@@ -176,10 +174,10 @@ function validar(formu) {
 
     if(letra != letras[resto]){
         alert('Letra del NIF incorrecta.');
+        formu.NIF.focus();
 		return false; //no submit
-    }else{
-        alert("Letra NIF correcta.");
-    }
+    } //else alert("Letra NIF correcta.");
+
 
     // Que el email tenga formato válido y sea cuenta gmail
 
@@ -187,10 +185,10 @@ function validar(formu) {
 
 	if(!er_email.test(formu.email.value)) {
 		alert('Formato email no válido.');
+		formu.email.focus();
 		return false; //no submit
-	} else {
-		alert('Formato email válido.');
-	}
+	} //else alert('Formato email válido.');
+
 
 	// Que la contraseña tenga 8+ caracteres y algún dígito
 
@@ -199,9 +197,10 @@ function validar(formu) {
 
     if(!er_pass.test(formu.passwd.value)) {
 		alert('La contraseña ha de tener al menos 8 caracteres y al menos un digito.');
+		formu.passwd.focus();
 		return false; //no submit
 	} else {
-		alert('Formato contraseña válida.');
+		//alert('Formato contraseña válida.');
 		pass=document.getElementById("passwd").value; // Para validar que se repita más abajo
 	}
 
@@ -209,30 +208,72 @@ function validar(formu) {
 
 	pass1=document.getElementById("passwd1").value;
 
-	alert("La primera pass es:"+pass+" -- La segunda pass es:"+pass1);
+	//alert("La primera pass es:"+pass+" -- La segunda pass es:"+pass1);
 
 	if(pass!=pass1) {
 		alert('Las contraseñas no coinciden.');
+		formu.passwd1.focus();
 		return false; //no submit
-	} else {
-		alert('Las contraseñas coinciden.');
-	}
+	} //else alert('Las contraseñas coinciden.');
+	
 
 	// Que el año académico se haya introducido correctamente
-	// TODO: que haya un intervalo de 1 entre los años
+	
 
 	var er_anyo=/^(\d{4}[\-\/]\d{4})$/;
 
 	if(!er_anyo.test(formu.anyo.value)) {
 		alert('Formato del Año Académico no válido.');
+		formu.anyo.focus()
 		return false; //no submit
-	} else {
-		alert('Formato del Año Académico válido.');
+	} //else alert('Formato del Año Académico válido.');
+	
+	// Que haya un intervalo de 1 entre los años 
+
+	var array_anyos = formu.anyo.value.split("-");
+	//alert(">>"+array_anyos.toString());
+
+	if((array_anyos[1]-array_anyos[0])!=1) {
+		alert('El año académico tiene que tener dos años consecutivos.');
+		formu.anyo.focus();
+		return false; //no submit
 	}
 
-	// Que no esté vacio el nombre
+	// Que no se matricule en un año pasado
 
-	alert(document.formu.comidas[0].checked);
+	var d = new Date();
+	var este_anyo = d.getFullYear();
+
+	if(array_anyos[0]<este_anyo){
+		alert('El año en el que se quiere matricular ya ha pasado.');
+		formu.anyo.focus()
+		return false; //no submit
+	}
+/*
+	alert(">>"+array_anyos[0]+"-"+array_anyos[1]);
+	
+	var er_cada_anyo = /(\d{4})/g;
+
+	var array_anyos = er_cada_anyo.match(formu.anyo.value);
+
+	alert(">>"+array_anyos[0]+"-"+array_anyos[1]);
+	//alert(">>"+array_anyos.index);
+	//alert(">>"+formu.anyo.value);
+	//alert(">>"+array_anyos.toString());
+	
+*/
+	// Que esté checked al menos una comida
+
+	var n=0;
+	var arraycheck = document.formu.comidas;
+
+	while(!arraycheck[n].checked){
+		if ((n+1)==arraycheck.length){
+			alert('Tienes que marcar al menos una comida.');
+			return false;
+		}
+		n++;
+	}
 
 	return true;
 }
