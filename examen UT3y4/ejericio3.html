@@ -1,0 +1,51 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <meta charset="UTF-8">
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+/*1. Desarrolle un programa en javascript que solicite al usuario que introduzca su nombre completo y fecha de nacimiento (dd/mm/yyyy). Una vez solicitados esos datos imprimirá:
+
+    Buenas tardes XXXXX
+    Tu nombre tiene XX caracteres, incluidos espacios. 
+    La primera letra A de tu nombre está en la posición: X
+    La última letra A de tu nombre está en la posición: X
+    Tu nombre menos las 3 primeras letras es: XXXXXXXX
+    Tu nombre todo en mayúsculas es: XXXXXXXX
+    Tu edad es: XX años. 
+    El coseno de 180º es: XXXXXXXXXX
+    Número al azar entre 2 y 8: XXXXXXXXXX
+    Número al azar entre 100 y 200: XXXXXXX
+
+    Nota.- Donde aparecen las XXXX tendrá que aparecer el cálculo o texto que corresponda. Cuando se muestre la edad, tiene que funcionar para ejecutarlo cualquier año. Cada apartado vale un punto, excepto el de la edad que vale 2puntos.
+La función coseno se usa con radianes:    360º=2PI radianes*/
+
+    var nombre = prompt("Introduzca su nombre completo:");
+    var nacimiento = prompt("Introduzca su fecha de nacimiento (dd/mm/yyyy):");
+
+    var Anacimiento = nacimiento.split("/");
+    var edad = 2016 - Anacimiento[2];
+
+    var posicionA = nombre.indexOf("a");
+
+    var coseno = Math.cos(Math.PI);
+
+    var entredosyocho = Math.random()*6+2;
+    var entrecienydoscientos = Math.random()*100+100;
+
+    alert("Buenas tardes "+nombre+"\n"+
+        "Tu nombre tiene "+nombre.length+" caracteres, incluidos espacios.\n"+
+        "La primera letra A de tu nombre está en la posición: "+nombre.indexOf("a")+"\n"+
+        "La última letra A de tu nombre está en la posición: "+nombre.lastIndexOf("a")+"\n"+ 
+        "Tu nombre menos las 3 primeras letras es: "+nombre.slice(3, nombre.length)+"\n"+
+        "Tu nombre todo en mayúsculas es: "+nombre.toUpperCase()+"\n"+
+        "Tu edad es: "+edad+" años.\n"+
+        "El coseno de 180º es: "+coseno+"\n"+
+        "Número al azar entre 2 y 8: "+entredosyocho+"\n"+
+        "Número al azar entre 100 y 200: "+entrecienydoscientos);
+
+		</script>
+    </BODY>
+</HTML>

@@ -1,0 +1,39 @@
+<HTML>
+    <HEAD>
+        <TITLE>Expresiones Regulares</TITLE>
+    	<script type="text/javascript" src="codigo.js"></script>
+    	<meta charset="UTF-8">
+    </HEAD>
+    <BODY>
+	    <form action="agerys" method="post" name="formu" onSubmit="return validar(this)"> 
+	    <!-- Ejercicio 1 -->
+		Matricula Vieja: <input type="text"  id="matricula" required pattern="[A-Z]{1,2} \d{4} [B-DF-HJ-NP-TV-Z]{3}" oninvalid="setCustomValidity('La matricula es obligatoria y debe mantener un formato válido')" oninput="setCustomValidity('')" /><br />
+		<!-- Ejercicio 2 -->
+		Matricula Nueva: <input type="text"  id="matricula1" required pattern="\d{4} [A-Z]{3}" oninvalid="setCustomValidity('La matricula es obligatoria y debe mantener un formato válido')" oninput="setCustomValidity('')" /><br />
+		<!-- Ejercicio 3 -->
+		Teléfono: <input type="text"  id="tlf" required pattern="^(0034|\+34)?-? ?([1-9]\d\d)-? ?(\d\d)-? ?(\d)-? ?(\d)-? ?(\d\d)$" oninvalid="setCustomValidity('El teléfono es obligatorio y tiene que tener un formato válido')" oninput="setCustomValidity('')" /><br />
+		<!-- Ejercicio 4 -->
+		Código Postal: <input type="text"  id="CP" required pattern="([5][0-2]|[0-4]\d)\d{3}" oninvalid="setCustomValidity('El código postal es obligatorio y debe mantener un formato válido')" oninput="setCustomValidity('')" /><br />
+		<!-- Ejercicio 5 -->
+		Palabras ini12741fin: <input type="text"  id="E5" required pattern="^[iI][nN][iI][^a-zA-Z\n]+[fF][iI][nN]$" oninvalid="setCustomValidity('No se cumple la expresion regular')" oninput="setCustomValidity('')" /><br />
+		<!-- Ejercicio 6 -->
+		Secuencias +U+Y+: <input type="text"  id="E6" required pattern="([A-Z]?(\+[A-Z])+[\+]?)|([\+]?([A-Z]\+)+[A-Z]?)" oninvalid="setCustomValidity('No se cumple la expresion regular')" oninput="setCustomValidity('')" /><br />
+		<!-- El ejercicio 7 devolverá true -->
+		<!-- Ejercicio 8 -->
+		Fecha: <input type="text" name="E8" id="E8" required pattern="(\d{1,2})\/(\d{1,2})\/(\d{4})" oninvalid="setCustomValidity('Formato fecha incorrecto')" oninput="setCustomValidity('')" /><br />
+		<br /><br /> <input type="submit" value="Enviar" id="btnSubmit" name="btnSubmit"/>
+		</form>
+		<br>
+		<script type="text/javascript">
+
+		// Ejercicio 8
+
+		var er_fecha = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
+
+		var ar_fecha = formu.E8.value.match(er_fecha);
+
+		alert("Día: "+ar_fecha[1]+"\nMes: "+ar_fecha[2]+"\nAño"+ar_fecha[3]);
+
+		</script>
+	</BODY>
+</HTML>

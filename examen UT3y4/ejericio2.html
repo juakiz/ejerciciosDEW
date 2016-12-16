@@ -1,0 +1,37 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <meta charset="UTF-8">
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+        /* Desarrolle un programa en javascript que cree un array llamado diassemana con los días de la semana. Que solicite una palabra por teclado al usuario y que llame a una función InsertaElemento() pasándole por parámetro dicha palabra y que se encargará de insertarla al final del array. Estará pidiendo palabras hasta que se le pulse el número 0. (5puntos)*/
+
+        var diassemana = new Array("Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo");
+
+        function InsertaElemento (array, palabra){
+            array.push(palabra);
+        }
+
+        do{
+
+            var condicion=true;
+            var palabra = prompt("Introduce palabra a insertar:");
+            if(palabra=="0")
+                condicion=false;
+            else
+                InsertaElemento(diassemana, palabra);
+        }while(condicion);
+
+        var cadenaFinal = "";
+
+        for(var i=7;i<diassemana.length;i++){
+            cadenaFinal=cadenaFinal +" "+diassemana[i];
+        }
+
+        alert("Lo que se ha agregado al array es: "cadenaFinal);
+
+		</script>
+    </BODY>
+</HTML>

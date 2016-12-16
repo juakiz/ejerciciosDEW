@@ -1,0 +1,38 @@
+<HTML>
+    <HEAD>
+        <TITLE>Título de la página</TITLE>
+    <meta charset="UTF-8">
+    </HEAD>
+    <BODY>
+		<script type="text/javascript">
+
+        /*Desarrolle un programa en javascript que pida al usuario un número N y a continuación pida N números por teclado y los almacene en un vector (array). Que llame a una función llamada Media que calcule la media aritmética de dichos números pasándole por parámetro dicho array, y que la función retorne la media. Con el valor que le retorna la función, se le presenta el resultado al usuario. (5puntos)*/
+
+        var n = prompt("Introduce la cantidad de números:");
+
+
+
+        var numeros = new Array();
+        //alert(numeros.length);
+
+        for(var i=0 ; i<n ; i++){
+            numeros[i]=parseInt(prompt("Introduce el número para la posición "+i+":"));
+        }
+
+        function media (array){
+
+            var resultado=0;
+
+            for(var j=0 ; j<array.length ; j++){
+                resultado = resultado + array[j];
+            }
+            var devolver = resultado / array.length;
+
+            return devolver;
+        }
+
+        alert("La media de los números es: "+media(numeros));
+
+		</script>
+    </BODY>
+</HTML>
