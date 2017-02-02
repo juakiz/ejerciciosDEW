@@ -30,14 +30,16 @@
 	    <td><button class="btn btn-default" onclick="reemplazarFila()">Reemplazar fila</button></td>
 	    <td><button class="btn btn-default" onclick="copiarFila()">Copiar fila</button></td>
 	    <td><button class="btn btn-default" onclick="listaNodos(document.body)">Recorrer Nodos</button></td>
+	    <td><button class="btn btn-default" onclick="cambiarEnlace()">Cambiar enlace por google</button></td>
+	    <td><button class="btn btn-default" onclick="intercambiarEnlace()">Intercambiar enlace</button></td>
 	  </tr>
  	</table>
 	
  </div>
  <div class="row">
-	<a href="www.google.com">Google</a><br>
-	<a href="www.w3schools.com">W3Schools</a><br>
-	<a href="www.stackoverflow.com">Stack Overflow</a><br><br>
+	<a href="http://www.google.com">Google</a><br>
+	<a href="http://www.w3schools.com">W3Schools</a><br>
+	<a href="http://www.stackoverflow.com">Stack Overflow</a><br><br>
 
 	<ul>
 		<li>Pizza</li>
@@ -167,7 +169,19 @@
 			}
 		}
 		return;
-				
+
+	}
+
+	function cambiarEnlace () {
+		document.getElementsByTagName("A")[0].attributes[0].nodeValue="http://www.youtube.com";
+		
+		var textnode = document.createTextNode("Youtube");
+		var viejoElemento = document.getElementsByTagName("A")[0];
+		viejoElemento.replaceChild(textnode, viejoElemento.childNodes[0]);
+	}
+
+	function intercambiarEnlace () {
+		
 	}
 
 	</script>

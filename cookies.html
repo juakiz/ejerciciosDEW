@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+	<title>Ejercicio cookies</title>
+</head>
+<body>
+<script type="application/javascript">
+if(localStorage){
+	
+	localStorage.setItem("nombre", "pepe");
+
+	var nombre = localStorage.getItem("nombre");
+
+	alert(nombre);
+
+	localStorage.removeItem("nombre");
+
+	nombre = localStorage.getItem("nombre");
+
+	alert(nombre);
+
+} else {
+	throw new Error("Tu browser no soporta localstorage.");
+}
+</script>
+</body>
+</html>

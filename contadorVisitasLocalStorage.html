@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+	<title>Contador Visitas</title>
+</head>
+<body>
+<button onclick="resetear()">RESETEAR</button>
+<p> Número de visitas: <span id="numero"></span>.</p>
+<script type="application/javascript">
+
+
+	var visitas = localStorage.getItem("visitas");
+	var contador;
+
+	if(!visitas){
+		contador = 0;
+		localStorage.setItem("visitas", contador);
+	} else {
+		contador = localStorage.getItem("visitas");
+		contador++;
+		localStorage.setItem("visitas", contador);
+	}
+
+	document.getElementById("numero").innerHTML = contador;
+
+	function resetear (){
+		localStorage.removeItem("visitas");
+		location.reload();
+	}
+</script>
+</body>
+</html>
